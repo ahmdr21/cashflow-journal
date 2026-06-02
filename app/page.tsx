@@ -46,7 +46,6 @@ export default function DashboardPage() {
   // =========================
   // INIT
   // =========================
-
   useEffect(() => {
     initializeDashboard();
 
@@ -62,13 +61,10 @@ export default function DashboardPage() {
         async () => {
           const {
             data: { user },
-          } =
-            await supabase.auth.getUser();
+          } = await supabase.auth.getUser();
 
           if (user) {
-            fetchTransactions(
-              user.id
-            );
+            fetchTransactions(user.id);
           }
         }
       )
@@ -80,14 +76,28 @@ export default function DashboardPage() {
   }, []);
 
   // =========================
-  // CHECK USER
+  // FETCH DATA
   // =========================
 
+  async function fetchTransactions(userId: string) {
+    const { data, error } = await supabase
+      .from("transactions")
+      .select("*")
+      .eq("user_id", userId)
+      .order("created_at", {
+        ascending: false,
+      });
+
+    if (!error && data) {
+      setTransactions(data);
+    }
+  }
+
+  // initialize page and session
   async function initializeDashboard() {
     const {
       data: { session },
-    } =
-      await supabase.auth.getSession();
+    } = await supabase.auth.getSession();
 
     if (!session) {
       router.push("/login");
@@ -96,17 +106,14 @@ export default function DashboardPage() {
 
     const {
       data: { user },
-    } =
-      await supabase.auth.getUser();
+    } = await supabase.auth.getUser();
 
     if (!user) {
       router.push("/login");
       return;
     }
 
-    const fullName =
-      user.user_metadata
-        ?.full_name;
+    const fullName = user.user_metadata?.full_name;
 
     if (fullName) {
       setUserName(fullName);
@@ -125,27 +132,6 @@ export default function DashboardPage() {
     }
 
     fetchTransactions(user.id);
-  }
-
-  // =========================
-  // FETCH DATA
-  // =========================
-
-  async function fetchTransactions(
-    userId: string
-  ) {
-    const { data, error } =
-      await supabase
-        .from("transactions")
-        .select("*")
-        .eq("user_id", userId)
-        .order("created_at", {
-          ascending: false,
-        });
-
-    if (!error && data) {
-      setTransactions(data);
-    }
   }
 
   // =========================
@@ -367,7 +353,7 @@ export default function DashboardPage() {
 
             </div>
 
-            <h2 className="text-[28px] md:text-[32px] lg:text-[34px] xl:text-[36px] font-black tracking-[-1px] leading-tight">
+            <h2 style={{ fontSize: "clamp(20px, 2.4vw, 36px)" }} className="font-black tracking-[-1px] leading-tight">
               Rp {formatRupiah(balance)}
             </h2>
 
@@ -389,7 +375,7 @@ export default function DashboardPage() {
 
             </div>
 
-            <h2 className="text-[28px] md:text-[32px] lg:text-[34px] xl:text-[36px] font-black tracking-[-1px] text-emerald-400 leading-tight">
+            <h2 style={{ fontSize: "clamp(20px, 2.4vw, 36px)" }} className="font-black tracking-[-1px] text-emerald-400 leading-tight">
               Rp {formatRupiah(income)}
             </h2>
 
@@ -411,7 +397,7 @@ export default function DashboardPage() {
 
             </div>
 
-            <h2 className="text-[28px] md:text-[32px] lg:text-[34px] xl:text-[36px] font-black tracking-[-1px] text-red-400 leading-tight">
+            <h2 style={{ fontSize: "clamp(20px, 2.4vw, 36px)" }} className="font-black tracking-[-1px] text-red-400 leading-tight">
               Rp {formatRupiah(expense)}
             </h2>
 
@@ -425,7 +411,7 @@ export default function DashboardPage() {
 
           {/* LEFT */}
 
-          <div className="bg-[#09090C] border border-zinc-900 rounded-[34px] p-5 flex flex-col overflow-hidden">
+          <div className="bg-[#09090C] border border-zinc-900 rounded-[34px] p-5 flex flex-col overflow-auto max-h-[72vh]">
 
             <div className="flex items-start justify-between mb-8">
 
@@ -473,9 +459,10 @@ export default function DashboardPage() {
 
               </div>
 
+
               {/* CATEGORY */}
 
-              <div className="space-y-4 overflow-auto pr-1">
+              <div className="space-y-3 overflow-auto pr-2 max-h-[48vh]">
 
                 {categoryData.map(
                   (item, index) => (
