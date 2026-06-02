@@ -298,7 +298,7 @@ export default function DashboardPage() {
       : "#27272a";
 
   return (
-    <main className="w-full h-screen bg-[#050505] text-white flex overflow-hidden">
+    <main className="w-full min-h-screen bg-[#050505] text-white flex">
 
       {/* SIDEBAR */}
 
@@ -306,7 +306,7 @@ export default function DashboardPage() {
 
       {/* CONTENT */}
 
-      <section className="flex-1 min-h-screen overflow-hidden px-4 py-4 lg:px-8 lg:py-8 lg:ml-72">
+      <section className="flex-1 min-h-screen min-w-0 overflow-auto px-4 py-4 lg:px-8 lg:py-8 lg:ml-72">
 
         {/* HEADER */}
 
@@ -314,7 +314,7 @@ export default function DashboardPage() {
 
           <div>
 
-            <h1 className="text-[64px] font-black tracking-[-2px] leading-none">
+            <h1 className="text-4xl md:text-[64px] font-black tracking-[-2px] leading-none">
               Halo, {userName} 👋
             </h1>
 
@@ -367,7 +367,7 @@ export default function DashboardPage() {
 
             </div>
 
-            <h2 className="text-[44px] font-black tracking-[-1px] leading-none">
+            <h2 className="text-3xl md:text-[44px] font-black tracking-[-1px] leading-none">
               Rp {formatRupiah(balance)}
             </h2>
 
@@ -389,7 +389,7 @@ export default function DashboardPage() {
 
             </div>
 
-            <h2 className="text-[44px] font-black tracking-[-1px] text-emerald-400 leading-none">
+            <h2 className="text-3xl md:text-[44px] font-black tracking-[-1px] text-emerald-400 leading-none">
               Rp {formatRupiah(income)}
             </h2>
 
@@ -411,7 +411,7 @@ export default function DashboardPage() {
 
             </div>
 
-            <h2 className="text-[44px] font-black tracking-[-1px] text-red-400 leading-none">
+            <h2 className="text-3xl md:text-[44px] font-black tracking-[-1px] text-red-400 leading-none">
               Rp {formatRupiah(expense)}
             </h2>
 
@@ -431,7 +431,7 @@ export default function DashboardPage() {
 
               <div>
 
-                <h2 className="text-[48px] font-black tracking-[-2px] leading-none">
+                <h2 className="text-3xl md:text-[48px] font-black tracking-[-2px] leading-none">
                   Analisa Pengeluaran
                 </h2>
 
@@ -534,7 +534,7 @@ export default function DashboardPage() {
 
             <div className="mb-8">
 
-              <h2 className="text-[48px] font-black tracking-[-2px] leading-none">
+              <h2 className="text-3xl md:text-[48px] font-black tracking-[-2px] leading-none">
                 Kategori
               </h2>
 
