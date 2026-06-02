@@ -15,6 +15,11 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "CashFlow Journal - Kelola Keuangan Dengan Bijak",
   description: "Aplikasi manajemen keuangan pribadi untuk mencatat, menganalisis, dan mengelola pengeluaran serta pemasukan Anda dengan mudah.",
+  viewport: {
+    width: "device-width",
+    initialScale: 1,
+    maximumScale: 1,
+  },
 };
 
 export default function RootLayout({
