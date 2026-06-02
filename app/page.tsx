@@ -298,7 +298,7 @@ export default function DashboardPage() {
       : "#27272a";
 
   return (
-    <main className="w-full h-screen bg-[#050505] text-white flex overflow-hidden">
+    <main className="w-full min-h-screen bg-[#050505] text-white flex">
 
       {/* SIDEBAR */}
 
@@ -306,7 +306,7 @@ export default function DashboardPage() {
 
       {/* CONTENT */}
 
-      <section className="flex-1 min-w-0 h-full overflow-hidden pt-28 lg:pt-8 px-4 pb-6 lg:px-8 lg:py-8 lg:ml-72">
+      <section className="flex-1 min-h-0 min-w-0 overflow-auto pt-24 lg:pt-8 px-4 pb-6 lg:px-8 lg:py-8 lg:ml-72">
 
         {/* HEADER */}
 
@@ -314,7 +314,7 @@ export default function DashboardPage() {
 
           <div>
 
-            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-[56px] xl:text-[64px] font-black tracking-[-2px] leading-tight max-w-3xl">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-[48px] xl:text-[56px] font-black tracking-[-2px] leading-tight max-w-3xl">
               Halo, {userName} 👋
             </h1>
 
@@ -367,7 +367,7 @@ export default function DashboardPage() {
 
             </div>
 
-            <h2 className="text-2xl md:text-[36px] lg:text-[40px] xl:text-[44px] font-black tracking-[-1px] leading-tight">
+            <h2 className="text-2xl md:text-[32px] lg:text-[36px] xl:text-[40px] font-black tracking-[-1px] leading-tight">
               Rp {formatRupiah(balance)}
             </h2>
 
@@ -389,7 +389,7 @@ export default function DashboardPage() {
 
             </div>
 
-            <h2 className="text-2xl md:text-[36px] lg:text-[40px] xl:text-[44px] font-black tracking-[-1px] text-emerald-400 leading-tight">
+            <h2 className="text-2xl md:text-[32px] lg:text-[36px] xl:text-[40px] font-black tracking-[-1px] text-emerald-400 leading-tight">
               Rp {formatRupiah(income)}
             </h2>
 
@@ -411,7 +411,7 @@ export default function DashboardPage() {
 
             </div>
 
-            <h2 className="text-2xl md:text-[36px] lg:text-[40px] xl:text-[44px] font-black tracking-[-1px] text-red-400 leading-tight">
+            <h2 className="text-2xl md:text-[32px] lg:text-[36px] xl:text-[40px] font-black tracking-[-1px] text-red-400 leading-tight">
               Rp {formatRupiah(expense)}
             </h2>
 
@@ -421,7 +421,7 @@ export default function DashboardPage() {
 
         {/* ANALYTICS */}
 
-<div className="grid grid-cols-1 lg:grid-cols-[1fr_320px] gap-5 min-h-[360px] lg:min-h-[420px]">
+<div className="grid grid-cols-1 lg:grid-cols-[1fr_320px] gap-5 min-h-[320px] lg:min-h-[380px]">
 
           {/* LEFT */}
 
@@ -431,7 +431,7 @@ export default function DashboardPage() {
 
               <div>
 
-                <h2 className="text-3xl md:text-[48px] font-black tracking-[-2px] leading-none">
+<h2 className="text-2xl md:text-[34px] lg:text-[38px] font-black tracking-[-2px] leading-tight">
                   Analisa Pengeluaran
                 </h2>
 
@@ -450,7 +450,7 @@ export default function DashboardPage() {
               <div className="flex justify-center">
 
                 <div
-                  className="w-[170px] h-[170px] rounded-full relative mx-auto xl:mx-0"
+                  className="w-[150px] h-[150px] rounded-full relative mx-auto xl:mx-0"
                   style={{
                     background:
                       donutChart,
@@ -463,7 +463,7 @@ export default function DashboardPage() {
                       Total
                     </p>
 
-                    <h3 className="text-[24px] font-black leading-tight text-center mt-2">
+                    <h3 className="text-[20px] font-black leading-tight text-center mt-2">
                       Rp {formatRupiah(expense)}
                     </h3>
 
@@ -534,7 +534,7 @@ export default function DashboardPage() {
 
             <div className="mb-8">
 
-              <h2 className="text-3xl md:text-[38px] lg:text-[42px] font-black tracking-[-2px] leading-tight">
+              <h2 className="text-2xl md:text-[30px] lg:text-[34px] font-black tracking-[-2px] leading-tight">
                 Kategori
               </h2>
 
