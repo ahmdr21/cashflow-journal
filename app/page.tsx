@@ -298,7 +298,7 @@ export default function DashboardPage() {
       : "#27272a";
 
   return (
-    <main className="w-full min-h-screen bg-[#050505] text-white flex">
+    <main className="w-full h-screen bg-[#050505] text-white flex overflow-hidden">
 
       {/* SIDEBAR */}
 
@@ -306,7 +306,7 @@ export default function DashboardPage() {
 
       {/* CONTENT */}
 
-      <section className="flex-1 min-h-screen min-w-0 overflow-auto px-4 py-4 lg:px-8 lg:py-8 lg:ml-72">
+      <section className="flex-1 min-w-0 h-full overflow-hidden pt-28 lg:pt-8 px-4 pb-6 lg:px-8 lg:py-8 lg:ml-72">
 
         {/* HEADER */}
 
@@ -314,7 +314,7 @@ export default function DashboardPage() {
 
           <div>
 
-            <h1 className="text-4xl md:text-[64px] font-black tracking-[-2px] leading-none">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-[56px] xl:text-[64px] font-black tracking-[-2px] leading-tight max-w-3xl">
               Halo, {userName} 👋
             </h1>
 
@@ -367,7 +367,7 @@ export default function DashboardPage() {
 
             </div>
 
-            <h2 className="text-3xl md:text-[44px] font-black tracking-[-1px] leading-none">
+            <h2 className="text-2xl md:text-[36px] lg:text-[40px] xl:text-[44px] font-black tracking-[-1px] leading-tight">
               Rp {formatRupiah(balance)}
             </h2>
 
@@ -389,7 +389,7 @@ export default function DashboardPage() {
 
             </div>
 
-            <h2 className="text-3xl md:text-[44px] font-black tracking-[-1px] text-emerald-400 leading-none">
+            <h2 className="text-2xl md:text-[36px] lg:text-[40px] xl:text-[44px] font-black tracking-[-1px] text-emerald-400 leading-tight">
               Rp {formatRupiah(income)}
             </h2>
 
@@ -411,7 +411,7 @@ export default function DashboardPage() {
 
             </div>
 
-            <h2 className="text-3xl md:text-[44px] font-black tracking-[-1px] text-red-400 leading-none">
+            <h2 className="text-2xl md:text-[36px] lg:text-[40px] xl:text-[44px] font-black tracking-[-1px] text-red-400 leading-tight">
               Rp {formatRupiah(expense)}
             </h2>
 
@@ -421,7 +421,7 @@ export default function DashboardPage() {
 
         {/* ANALYTICS */}
 
-        <div className="grid grid-cols-1 lg:grid-cols-[1fr_320px] gap-5 min-h-[520px]">
+<div className="grid grid-cols-1 lg:grid-cols-[1fr_320px] gap-5 min-h-[360px] lg:min-h-[420px]">
 
           {/* LEFT */}
 
@@ -443,14 +443,14 @@ export default function DashboardPage() {
 
             </div>
 
-            <div className="flex-1 grid grid-cols-[270px_1fr] gap-10 items-center overflow-hidden">
+<div className="flex-1 grid grid-cols-1 xl:grid-cols-[270px_1fr] gap-8 items-center overflow-hidden">
 
               {/* DONUT */}
 
               <div className="flex justify-center">
 
                 <div
-                  className="w-[220px] h-[220px] rounded-full relative"
+                  className="w-[170px] h-[170px] rounded-full relative mx-auto xl:mx-0"
                   style={{
                     background:
                       donutChart,
@@ -534,7 +534,7 @@ export default function DashboardPage() {
 
             <div className="mb-8">
 
-              <h2 className="text-3xl md:text-[48px] font-black tracking-[-2px] leading-none">
+              <h2 className="text-3xl md:text-[38px] lg:text-[42px] font-black tracking-[-2px] leading-tight">
                 Kategori
               </h2>
 
